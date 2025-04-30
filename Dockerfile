@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM public.ecr.aws/docker/library/python:3.9.22-bullseye
 
 WORKDIR /code
 
@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./app /code/app
 
-CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+CMD ["fastapi", "run", "app/main.py"]
