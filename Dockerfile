@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/python:3.9.22-bullseye
+FROM public.ecr.aws/lambda/python:3.9
 
 WORKDIR /code
 
