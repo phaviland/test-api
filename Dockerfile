@@ -1,11 +1,11 @@
 FROM public.ecr.aws/lambda/python:3.9
 
-WORKDIR /code
+WORKDIR /var/task
 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./requirements.txt requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-COPY ./app /code/app
+COPY ./app app/
 
 CMD ["app.main.handler"]
