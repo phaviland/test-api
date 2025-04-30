@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from aws_lambda_powertools.utilities.asgi import ASGIApp
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -15,4 +15,4 @@ def read_root():
 def read_root():
     return {"Hello": "World3"}
 
-handler = ASGIApp(app)
+handler = Mangum(app, lifespan="off")
