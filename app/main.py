@@ -14,5 +14,3 @@ def read_root():
 @app.get("/route3")
 def read_root():
     return {"Hello": "World3"}
-
-handler = Mangum(app, lifespan="off")

@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.9
+FROM python:3.11-slim
 
 WORKDIR /var/task
 
@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY ./app app/
 
-CMD ["app.main.handler"]
+CMD ["fastapi", "run", "app/main.py"]
